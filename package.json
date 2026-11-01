@@ -1,0 +1,19 @@
+{
+  "name": "grok-world",
+  "private": true,
+  "version": "0.1.0",
+  "description": "Local Grok bot stage: chat bridge + avatar world + live lens (separate from Jarvis)",
+  "scripts": {
+    "dev": "concurrently -n bridge,web -c cyan,magenta \"npm run dev -w bridge\" \"npm run dev -w web\"",
+    "dev:bridge": "npm run dev -w bridge",
+    "dev:web": "npm run dev -w web",
+    "start": "npm run start -w bridge"
+  },
+  "workspaces": [
+    "bridge",
+    "web"
+  ],
+  "devDependencies": {
+    "concurrently": "^9.1.2"
+  }
+}
